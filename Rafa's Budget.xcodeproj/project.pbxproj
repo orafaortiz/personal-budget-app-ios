@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF74E3BE2696935D007F8569 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF74E3BD2696935D007F8569 /* User.swift */; };
 		AF7D798C268A6A560072752E /* TabOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7D798B268A6A560072752E /* TabOneController.swift */; };
 		AF7D798E268A6A700072752E /* TabTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7D798D268A6A700072752E /* TabTwoController.swift */; };
 		AF7D7990268A75000072752E /* TabThreeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7D798F268A75000072752E /* TabThreeController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF74E3BD2696935D007F8569 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AF7D798B268A6A560072752E /* TabOneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabOneController.swift; sourceTree = "<group>"; };
 		AF7D798D268A6A700072752E /* TabTwoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTwoController.swift; sourceTree = "<group>"; };
 		AF7D798F268A75000072752E /* TabThreeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabThreeController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		AF7D798A268A6A0C0072752E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AF74E3BD2696935D007F8569 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				AF7D798C268A6A560072752E /* TabOneController.swift in Sources */,
 				AFB9F2DE2688D43800975083 /* Rafa_s_Budget.xcdatamodeld in Sources */,
 				AF7D798E268A6A700072752E /* TabTwoController.swift in Sources */,
+				AF74E3BE2696935D007F8569 /* User.swift in Sources */,
 				AFB9F2D82688D43800975083 /* ViewController.swift in Sources */,
 				AFB9F2D42688D43800975083 /* AppDelegate.swift in Sources */,
 				AFB9F2D62688D43800975083 /* SceneDelegate.swift in Sources */,

@@ -15,6 +15,7 @@ class TabOneController: UIViewController {
         
         setupNavigationBar()
         view.backgroundColor = .white
+        
     }
     
     private func setupNavigationBar() {

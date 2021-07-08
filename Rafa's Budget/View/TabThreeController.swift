@@ -20,6 +20,6 @@ class TabThreeController: UIViewController {
     private func setupNavigationBar() {
         configureNavigationBar(
             largeTitleColor: .white, backgoundColor: UIColor(named: "Orange")!,
-            tintColor: .green, title: "Registrar", preferredLargeTitle: true)
+            tintColor: .green, title: "Transações", preferredLargeTitle: true)
     }
 }

@@ -20,6 +20,6 @@ class TabTwoController: UIViewController {
     private func setupNavigationBar() {
         configureNavigationBar(
             largeTitleColor: .white, backgoundColor: UIColor(named: "Brown")!,
-            tintColor: .green, title: "Detalhes", preferredLargeTitle: true)
+            tintColor: .green, title: "Extrato Detalhado", preferredLargeTitle: true)
     }
 }

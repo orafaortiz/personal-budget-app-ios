@@ -8,7 +8,7 @@
 import UIKit
 import LBTATools
 
-class ViewController: UIViewController {
+class ViewController: LBTAFormController {
     
     private let button: UIButton = {
        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 52))
@@ -17,19 +17,51 @@ class ViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         return button
     }()
+    
+    let registerButton = UIButton(title: "Register", titleColor: .white, font: .boldSystemFont(ofSize: 16), backgroundColor: UIColor(named: "Orange")!, target: self, action: #selector(handleCancel))
+    
+    let loginButton = UIButton(title: "Login", titleColor: .white, font: .boldSystemFont(ofSize: 16), backgroundColor: UIColor(named: "Green")!, target: self, action: #selector(handleCancel))
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        view.addSubview(button)
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        view.backgroundColor = UIColor(named: "AntiqueWhite")
+//        view.addSubview(button)
+//        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+//        view.backgroundColor = UIColor(named: "AntiqueWhite")
+        
+        scrollView.alwaysBounceVertical = true
+        
+        view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        
+        formContainerStackView.axis = .vertical
+        formContainerStackView.spacing = 12
+        formContainerStackView.layoutMargins = .init(top: 0, left: 24, bottom: 24, right: 12)
+        
+        // email input field
+        let emailField = IndentedTextField(placeholder: "Email", padding: 12, cornerRadius: 5, backgroundColor: .white)
+        emailField.constrainHeight(50)
+        formContainerStackView.addArrangedSubview(emailField)
+        
+        // password input field
+        let passwordField = IndentedTextField(placeholder: "Password", padding: 12, cornerRadius: 5, backgroundColor: .white)
+        passwordField.constrainHeight(50)
+        formContainerStackView.addArrangedSubview(passwordField)
+        
+        registerButton.constrainHeight(50)
+        loginButton.constrainHeight(50)
+        
+        formContainerStackView.addArrangedSubview(registerButton)
+        formContainerStackView.addArrangedSubview(loginButton)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        button.center = view.center
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        button.center = view.center
+//    }
+    
+    @objc func handleCancel() {
+        
     }
     
     @objc func didTapButton() {
@@ -64,6 +96,7 @@ class ViewController: UIViewController {
 }
 
 extension UIViewController {
+    
     func configureNavigationBar(largeTitleColor: UIColor, backgoundColor: UIColor, tintColor: UIColor, title: String, preferredLargeTitle: Bool) {
         if #available(iOS 13.0, *) {
             let navBarAppearance = UINavigationBarAppearance()
@@ -85,6 +118,7 @@ extension UIViewController {
             // Fallback on earlier versions
             navigationController?.navigationBar.prefersLargeTitles = preferredLargeTitle
             navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: largeTitleColor]
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: largeTitleColor]
             navigationController?.navigationBar.barTintColor = backgoundColor
             navigationController?.navigationBar.isTranslucent = false
             navigationItem.title = title
