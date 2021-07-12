@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Do nothing
         } else {
             window = UIWindow() // only include for builds < iOS 13.0
-            window?.rootViewController = ViewController() // only include for builds < iOS 13.0
+            window?.rootViewController = ViewController(alignment: .center) // only include for builds < iOS 13.0
             window?.makeKeyAndVisible() // only include for builds < iOS 13.0
         }
         return true

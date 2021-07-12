@@ -10,49 +10,49 @@ import LBTATools
 
 class ViewController: LBTAFormController {
     
-    private let button: UIButton = {
-       let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 52))
-        button.setTitle("Log In", for: .normal)
-        button.backgroundColor = UIColor(named: "Orange")
-        button.setTitleColor(.white, for: .normal)
-        return button
-    }()
+    let registerButton = UIButton(title: "Register", titleColor: UIColor(named: "AntiqueWhite") ?? .white, font: .boldSystemFont(ofSize: 16), backgroundColor: UIColor(named: "Orange")!, target: self, action: #selector(signUp))
     
-    let registerButton = UIButton(title: "Register", titleColor: .white, font: .boldSystemFont(ofSize: 16), backgroundColor: UIColor(named: "Orange")!, target: self, action: #selector(handleCancel))
-    
-    let loginButton = UIButton(title: "Login", titleColor: .white, font: .boldSystemFont(ofSize: 16), backgroundColor: UIColor(named: "Green")!, target: self, action: #selector(handleCancel))
+    let loginButton = UIButton(title: "Login", titleColor: UIColor(named: "AntiqueWhite") ?? .white, font: .boldSystemFont(ofSize: 16), backgroundColor: UIColor(named: "Green")!, target: self, action: #selector(signIn))
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-//        view.addSubview(button)
-//        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-//        view.backgroundColor = UIColor(named: "AntiqueWhite")
         
         scrollView.alwaysBounceVertical = true
         
         view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         
         formContainerStackView.axis = .vertical
-        formContainerStackView.spacing = 12
-        formContainerStackView.layoutMargins = .init(top: 0, left: 24, bottom: 24, right: 12)
+        formContainerStackView.spacing = 16
+        formContainerStackView.layoutMargins = .init(top: 0, left: 24, bottom: 12, right: 24)
         
         // email input field
-        let emailField = IndentedTextField(placeholder: "Email", padding: 12, cornerRadius: 5, backgroundColor: .white)
-        emailField.constrainHeight(50)
+        let emailField = UITextField().forBlackBackground(placeholderText: "Email", keyboard: .emailAddress)
         formContainerStackView.addArrangedSubview(emailField)
         
         // password input field
-        let passwordField = IndentedTextField(placeholder: "Password", padding: 12, cornerRadius: 5, backgroundColor: .white)
-        passwordField.constrainHeight(50)
-        formContainerStackView.addArrangedSubview(passwordField)
+        let passwordField = UITextField().forBlackBackground(placeholderText: "Password")
+       formContainerStackView.addArrangedSubview(passwordField)
+        
+        loginButton.constrainHeight(50)
+        loginButton.layer.cornerRadius = 5
         
         registerButton.constrainHeight(50)
-        loginButton.constrainHeight(50)
+        registerButton.layer.cornerRadius = 5
         
-        formContainerStackView.addArrangedSubview(registerButton)
         formContainerStackView.addArrangedSubview(loginButton)
+        
+        let divider = UIView(backgroundColor: .white).withHeight(1)
+        
+        formContainerStackView.addArrangedSubview(divider)
+        
+        let orText = UILabel(text: "Or create your account", font: .boldSystemFont(ofSize: 14), textColor: UIColor(named: "AntiqueWhite") ?? .white, textAlignment: .left, numberOfLines: 1)
+        
+//        let registerBox = UIView().hstack(orText, registerButton.withWidth(200), spacing: 12, alignment: .fill)
+//        formContainerStackView.addArrangedSubview(registerBox)
+        
+        formContainerStackView.addArrangedSubview(orText)
+        formContainerStackView.addArrangedSubview(registerButton)
+        
     }
     
 //    override func viewDidLayoutSubviews() {
@@ -60,11 +60,15 @@ class ViewController: LBTAFormController {
 //        button.center = view.center
 //    }
     
-    @objc func handleCancel() {
+    @objc func signIn() {
+        configUINavigation()
+    }
+    
+    @objc func signUp() {
         
     }
     
-    @objc func didTapButton() {
+    private func configUINavigation() {
         let tabBarVC = UITabBarController()
         
         let tab1 = UINavigationController(rootViewController: TabOneController())
@@ -93,6 +97,7 @@ class ViewController: LBTAFormController {
         tabBarVC.tabBar.barTintColor = UIColor(named: "AntiqueWhite")
         present(tabBarVC, animated: true)
     }
+    
 }
 
 extension UIViewController {

@@ -20,6 +20,7 @@
 		AFB9F2EE2688D43B00975083 /* Rafa_s_BudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB9F2ED2688D43B00975083 /* Rafa_s_BudgetTests.swift */; };
 		AFB9F2F92688D43B00975083 /* Rafa_s_BudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB9F2F82688D43B00975083 /* Rafa_s_BudgetUITests.swift */; };
 		AFB9F3082688DC1C00975083 /* LBTATools in Frameworks */ = {isa = PBXBuildFile; productRef = AFB9F3072688DC1C00975083 /* LBTATools */; };
+		AFE54351269A0039007B3022 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE54350269A0039007B3022 /* TextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		AFB9F2F42688D43B00975083 /* Rafa's BudgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rafa's BudgetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFB9F2F82688D43B00975083 /* Rafa_s_BudgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rafa_s_BudgetUITests.swift; sourceTree = "<group>"; };
 		AFB9F2FA2688D43B00975083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFE54350269A0039007B3022 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,8 @@
 		AFB9F2D22688D43800975083 /* Rafa's Budget */ = {
 			isa = PBXGroup;
 			children = (
+				AFE5434F269A0005007B3022 /* Extensions */,
+				AFE5434E2699FBCE007B3022 /* API */,
 				AF7D798A268A6A0C0072752E /* Model */,
 				AF7D7989268A69FF0072752E /* ViewModel */,
 				AF7D7988268A58A30072752E /* View */,
@@ -164,6 +168,21 @@
 				AFB9F2FA2688D43B00975083 /* Info.plist */,
 			);
 			path = "Rafa's BudgetUITests";
+			sourceTree = "<group>";
+		};
+		AFE5434E2699FBCE007B3022 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		AFE5434F269A0005007B3022 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AFE54350269A0039007B3022 /* TextField.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +326,7 @@
 				AF7D798E268A6A700072752E /* TabTwoController.swift in Sources */,
 				AF74E3BE2696935D007F8569 /* User.swift in Sources */,
 				AFB9F2D82688D43800975083 /* ViewController.swift in Sources */,
+				AFE54351269A0039007B3022 /* TextField.swift in Sources */,
 				AFB9F2D42688D43800975083 /* AppDelegate.swift in Sources */,
 				AFB9F2D62688D43800975083 /* SceneDelegate.swift in Sources */,
 			);
